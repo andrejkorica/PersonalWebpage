@@ -6,16 +6,13 @@
       <div class="w-full flex">
         <ul class="flex justify-center">
           <li>
-            <a href="#" class="p-4 navItems">Projects</a>
-          </li>
-          <li>
             <a href="#" class="p-4 navItems">About me</a>
           </li>
           <li>
-            <a href="#" class="p-4 navItems">Contact</a>
+            <a href="#" class="p-4 navItems">Projects</a>
           </li>
           <li>
-            <a href="#" class="p-4 navItems">Hire me</a>
+            <a href="mailto:koricaandrej3@gmail.com" class="p-4 navItems">Contact me</a>
           </li>
         </ul>
 
