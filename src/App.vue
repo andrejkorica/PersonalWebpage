@@ -20,90 +20,42 @@
             <div class="relative">
               <ul class="flex animate-marquee">
                 <li class="m-8">
-                  <font-awesome-icon
-                    icon="fa-brands fa-js"
-                    size="2xl"
-                    style="color: #ffdd00"
-                  />
+                  <img src="./assets/AndroidStudio.png" class="w-[70px]" alt="">
                 </li>
                 <li class="m-8">
-                  <font-awesome-icon
-                    icon="fa-brands fa-js"
-                    size="2xl"
-                    style="color: #ffdd00"
-                  />
+                  <img src="./assets/C++.png" class="w-[70px]" alt="">
                 </li>
                 <li class="m-8">
-                  <font-awesome-icon
-                    icon="fa-brands fa-js"
-                    size="2xl"
-                    style="color: #ffdd00"
-                  />
+                  <img src="./assets/CSharp.png" class="w-[70px]" alt="">
                 </li>
                 <li class="m-8">
-                  <font-awesome-icon
-                    icon="fa-brands fa-js"
-                    size="2xl"
-                    style="color: #ffdd00"
-                  />
+                  <img src="./assets/Java.png" class="w-[70px]" alt="">
                 </li>
                 <li class="m-8">
-                  <font-awesome-icon
-                    icon="fa-brands fa-js"
-                    size="2xl"
-                    style="color: #ffdd00"
-                  />
+                  <img src="./assets/JavaScript.png" class="w-[70px]" alt="">
                 </li>
                 <li class="m-8">
-                  <font-awesome-icon
-                    icon="fa-brands fa-js"
-                    size="2xl"
-                    style="color: #ffdd00"
-                  />
+                  <img src="./assets/Kotlin.png" class="w-[70px]" alt="">
                 </li>
               </ul>
               <ul class="flex absolute top-0 animate-marquee2">
                 <li class="m-8">
-                  <font-awesome-icon
-                    icon="fa-brands fa-js"
-                    size="2xl"
-                    style="color: #ffdd00"
-                  />
+                  <img src="./assets/MongoDB.png" class="w-[70px]" alt="">
                 </li>
                 <li class="m-8">
-                  <font-awesome-icon
-                    icon="fa-brands fa-js"
-                    size="2xl"
-                    style="color: #ffdd00"
-                  />
+                  <img src="./assets/Python.png" class="w-[70px]" alt="">
                 </li>
                 <li class="m-8">
-                  <font-awesome-icon
-                    icon="fa-brands fa-js"
-                    size="2xl"
-                    style="color: #ffdd00"
-                  />
+                  <img src="./assets/React.png" class="w-[70px]" alt="">
                 </li>
                 <li class="m-8">
-                  <font-awesome-icon
-                    icon="fa-brands fa-js"
-                    size="2xl"
-                    style="color: #ffdd00"
-                  />
+                  <img src="./assets/SQL.png" class="w-[70px]" alt="">
                 </li>
                 <li class="m-8">
-                  <font-awesome-icon
-                    icon="fa-brands fa-js"
-                    size="2xl"
-                    style="color: #ffdd00"
-                  />
+                  <img src="./assets/Unity.png" class="w-[70px]" alt="">
                 </li>
                 <li class="m-8">
-                  <font-awesome-icon
-                    icon="fa-brands fa-js"
-                    size="2xl"
-                    style="color: #ffdd00"
-                  />
+                  <img src="./assets/Vue.png" class="w-[70px]" alt="">
                 </li>
               </ul>
             </div>
