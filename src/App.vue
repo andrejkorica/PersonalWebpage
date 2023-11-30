@@ -98,28 +98,28 @@ body {
 }
 
 @keyframes marquee {
-  0% {
+  0%, 100% {
     transform: translateX(0%);
   }
-  100% {
+  50% {
     transform: translateX(-100%);
   }
 }
 
 @keyframes marquee2 {
-  0% {
+  0%, 100% {
     transform: translateX(100%);
   }
-  100% {
+  50% {
     transform: translateX(0%);
   }
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 45s linear infinite;
 }
 
 .animate-marquee2 {
-  animation: marquee2 30s linear infinite;
+  animation: marquee2 45s linear infinite;
 }
 </style>
