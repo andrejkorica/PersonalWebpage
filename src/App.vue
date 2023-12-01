@@ -2,7 +2,7 @@
   <div id="app" class="flex flex-col h-screen">
     
     <navbar />
-    <RouterView />
+      <RouterView/>
   </div>
 </template>
 
@@ -18,9 +18,10 @@ export default {
 </script>
 
 <style>
-html,
-body {
-  @apply h-full m-0 p-0 bg-gray-900;
-}
+  html,
+  body {
+    @apply h-full m-0 p-0 bg-gray-900;
+  }
+
 
 </style>

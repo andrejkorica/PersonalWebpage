@@ -5,14 +5,10 @@
     >
         <ul class="flex sm:justify-start justify-between w-full">
           <li>
-            <a href="#" class="navItems text-base"
-              >About</a
-            >
+            <router-link :to="{ name: 'AboutMe' }" class="navItems text-base">About</router-link>
           </li>
           <li>
-            <a href="#" class="navItems text-base sm:ml-8"
-              >Projects</a
-            >
+            <router-link :to="{ name: 'projects' }" class="navItems text-base sm:ml-8">Projects</router-link>
           </li>
           <li>
             <a
