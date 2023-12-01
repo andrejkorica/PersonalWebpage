@@ -1,30 +1,28 @@
 <template>
-  <nav class="full-width">
+  <nav>
     <div
-      class="max-w-screen-xl flex flex-wrap items-center justify-between p-8 ml-0 md:ml-[5%]"
+      class=" flex flex-wrap items-center w-[80%] mx-auto my-7"
     >
-      <div class="w-full flex">
-        <ul class="flex justify-center">
+        <ul class="flex sm:justify-start justify-between w-full">
           <li>
-            <a href="#" class="p-4 navItems text-base md:text-lg lg:text-xl"
+            <a href="#" class="navItems text-base"
               >About</a
             >
           </li>
           <li>
-            <a href="#" class="p-4 navItems text-base md:text-lg lg:text-xl"
+            <a href="#" class="navItems text-base sm:ml-8"
               >Projects</a
             >
           </li>
           <li>
             <a
               href="mailto:koricaandrej3@gmail.com"
-              class="p-4 navItems text-base md:text-lg lg:text-xl"
+              class="navItems text-base sm:ml-8"
               >Contact</a
             >
           </li>
         </ul>
       </div>
-    </div>
   </nav>
 </template>
 
@@ -34,7 +32,7 @@ export default {};
 
 <style>
 .navItems {
-  @apply relative ml-10 text-gray-500 font-mono font-bold tracking-[1px] text-xl;
+  @apply relative text-gray-500 font-mono font-bold tracking-[1px] sm:text-xl text-lg py-3;
 }
 
 .navItems::after {

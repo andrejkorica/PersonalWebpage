@@ -1,8 +1,9 @@
 <template>
   <div id="app" class="flex flex-col h-screen">
+    
     <navbar />
-      <RouterView />
-    </div>
+    <RouterView />
+  </div>
 </template>
 
 <script>

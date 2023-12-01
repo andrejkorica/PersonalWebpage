@@ -1,13 +1,11 @@
 <template>
-  <div class="flex-1 flex items-center justify-center md:mt-[-100px]">
-    <div class="grid grid-cols-6 w-[80%]">
+  <div class="flex-1 flex md:mt-[-100px] w-[80%] mx-auto">
+    <div class="grid grid-cols-6">
       <!-- FIRST GRID ELEMENT -->
       <div
         class="col-span-6 md:col-span-3 flex flex-col items-start justify-center mx-auto"
       >
-        <h2
-          class="text-left mb-3 font-semibold text-white text-4xl lg:text-4xl sm:text-4xl md:text-4xl"
-        >
+        <h2 class="text-left mb-3 font-semibold text-white text-4xl">
           Hi, my name is Andrej Korica
         </h2>
 
@@ -215,12 +213,5 @@ export default {
 
 .social-icons a {
   margin: 0 5px; /* Adjust the spacing between icons */
-}
-
-@media (max-width: 767px) {
-  .social-icons {
-    flex-direction: column; /* Stack icons vertically on small screens */
-    align-items: flex-end; /* Align icons to the right on small screens */
-  }
 }
 </style>
