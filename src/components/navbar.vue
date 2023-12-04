@@ -1,19 +1,19 @@
 <template>
   <nav>
     <div
-      class=" flex flex-wrap items-center w-[80%] mx-auto my-7"
+      class=" flex | flex-wrap | items-center | w-[80%] | mx-auto | my-7"
     >
-        <ul class="flex sm:justify-start justify-between w-full">
+        <ul class="flex | sm:justify-start | justify-between | w-full">
           <li>
-            <router-link :to="{ name: 'AboutMe' }" class="navItems text-base">About</router-link>
+            <router-link :to="{ name: 'AboutMe' }" class="navItems | text-base">About</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'projects' }" class="navItems text-base sm:ml-8">Projects</router-link>
+            <router-link :to="{ name: 'projects' }" class="navItems | text-base | sm:ml-8">Projects</router-link>
           </li>
           <li>
             <a
               href="mailto:koricaandrej3@gmail.com"
-              class="navItems text-base sm:ml-8"
+              class="navItems | text-base | sm:ml-8"
               >Contact</a
             >
           </li>
