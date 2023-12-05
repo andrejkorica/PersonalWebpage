@@ -32,9 +32,9 @@
 
       <!-- RIGHT SIDE - MD READER -->
       <div
-        class="flex-1 | p-4 | bg-white | border | border-gray-200 | rounded-lg | shadow | dark:bg-white | dark:border-gray-700 | overflow-auto | ml-2"
+        class="flex-1 | p-4 | bg-white | border | border-gray-200 | rounded-lg | shadow | dark:bg-white | dark:border-gray-700 | overflow-auto | ml-2 markdownBody" 
       >
-      {{ currentMD }}
+      <Markdown :linkify="true" :source="currentMD" :anchor="{level: 1}"/> 
     </div>
     </div>
   </div>
@@ -42,12 +42,16 @@
 
 <script>
 import axios from "axios";
+import Markdown from 'vue3-markdown-it';
 export default {
   data() {
     return {
       githubAccount: "",
       currentMD: "",
     };
+  },
+  components: {
+    Markdown
   },
   methods: {
     async githubFetch() {
@@ -90,5 +94,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
+  .markdownBody h1, h2, h3, h4, h5, h6 {
+    font-size: initial;
+    font-weight: initial;
+}
+
 </style>

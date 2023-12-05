@@ -24,9 +24,9 @@
 
 <script>
 export default {};
-</script>
+</script >
 
-<style>
+<style scoped>
 .navItems {
   @apply relative text-gray-500 font-mono font-bold tracking-[1px] sm:text-xl text-lg py-3;
 }
