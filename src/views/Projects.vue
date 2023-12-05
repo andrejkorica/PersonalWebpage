@@ -25,24 +25,22 @@
       </div>
 
       <!-- RIGHT SIDE - MD READER -->
-      <div class="flex-1 p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-white dark:border-gray-700 overflow-auto ml-2">
-        
-      </div>
+      <div
+        class="flex-1 | p-4 | bg-white | border | border-gray-200 | rounded-lg | shadow | dark:bg-white | dark:border-gray-700 | overflow-auto | ml-2"
+      >
+      {{ currentMD }}
+    </div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import Markdown from 'vue3-markdown-it';
 export default {
   data() {
     return {
       githubAccount: "",
     };
-  },
-  components: {
-    Markdown
   },
   methods: {
     async githubFetch() {
