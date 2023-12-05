@@ -25,11 +25,9 @@
       </div>
 
       <!-- RIGHT SIDE - MD READER -->
-      <div
-        class="flex-1 | p-4 | bg-white | border | border-gray-200 | rounded-lg | shadow | dark:bg-white | dark:border-gray-700 | overflow-auto | ml-2"
-      >
-      {{ currentMD }}
-    </div>
+      <div class="flex-1 p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-white dark:border-gray-700 overflow-auto ml-2">
+        
+      </div>
     </div>
   </div>
 </template>
