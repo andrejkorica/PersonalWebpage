@@ -34,7 +34,9 @@
       <div
         class="flex-1 | p-4 | bg-white | border | border-gray-200 | rounded-lg | shadow | dark:bg-white | dark:border-gray-700 | overflow-auto | ml-2"
       >
-      {{ currentMD }}
+
+      <Markdown :source = "currentMD"></Markdown>
+
     </div>
     </div>
   </div>
@@ -42,12 +44,16 @@
 
 <script>
 import axios from "axios";
+import Markdown from 'vue3-markdown-it';
 export default {
   data() {
     return {
       githubAccount: "",
       currentMD: "",
     };
+  },
+  components: {
+    Markdown
   },
   methods: {
     async githubFetch() {
