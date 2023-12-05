@@ -8,9 +8,10 @@
       <div class="w-[25%] | overflow-auto">
         <div v-for="data in githubAccount" :key="data.id">
           <div
-            @click="getMarkdown(data.owner.login, data.name)"
+            @click="getMarkdown(data.owner.login, data.name, data.clone_url)"
             :title="data.name"
-            class="overflow-ellipsis | hover:bg-gray-800 | cursor-pointer | p-3 | bg-white | border | border-gray-200 | rounded-lg | shadow dark:bg-gray-900 | dark:border-gray-700"
+            class="overflow-ellipsis | hover:bg-[#bb13fe77] | cursor-pointer | p-3 | bg-white | border | border-gray-200 | rounded-lg | shadow dark:bg-gray-900 | dark:border-gray-700"
+
           >
             <h1
               class="mb-1 | text-xl | font-medium | text-gray-900 | dark:text-white | overflow-ellipsis | line-clamp-2"
@@ -32,26 +33,48 @@
 
       <!-- RIGHT SIDE - MD READER -->
       <div
-        class="flex-1 | p-4 | bg-white | border | border-gray-200 | rounded-lg | shadow | dark:bg-white | dark:border-gray-700 | overflow-auto | ml-2 markdownBody" 
+        class="flex-1 p-12 bg-white border border-gray-200 rounded-lg shadow dark:bg-white dark:border-gray-700 overflow-auto ml-2 relative"
       >
-      <Markdown :linkify="true" :source="currentMD" :anchor="{level: 1}"/> 
-    </div>
+        <div v-if="DisplayMessage !== 'No repository selected'"
+          class="absolute top-0 right-0 bg-green-400 w-14 h-14 rounded-full flex items-center justify-center mr-8 mt-8 hover:bg-green-600 cursor-pointer"
+        >
+         <a :href="repo" target="_blank"> <i class="fa-solid fa-arrow-right text-4xl text-white"></i></a>
+        </div>
+
+        <div v-if="currentMD">
+          <Markdown
+            :linkify="true"
+            :source="currentMD"
+            :anchor="{ level: 3 }"
+          />
+        </div>
+
+        <div v-else class="flex items-center justify-center h-[100%]">
+          <h1
+            class="mb-4 font-bold font-mono text-gray-300 text-6xl text-center"
+          >
+            {{ DisplayMessage }}
+          </h1>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import Markdown from 'vue3-markdown-it';
+import Markdown from "vue3-markdown-it";
 export default {
   data() {
     return {
       githubAccount: "",
-      currentMD: "",
+      currentMD: null,
+      DisplayMessage: "No repository selected",
+      repo: "",
     };
   },
   components: {
-    Markdown
+    Markdown,
   },
   methods: {
     async githubFetch() {
@@ -64,7 +87,12 @@ export default {
         console.log(error);
       }
     },
-    async getMarkdown(owner, name) {
+
+    async getMarkdown(owner, name, clone_url) {
+      this.DisplayMessage = ""
+      this.currentMD = null;
+      this.repo = clone_url;
+
       const ownerOfRepo = owner;
       const repo = name;
       const path = "README.md";
@@ -78,11 +106,12 @@ export default {
             Accept: "application/vnd.github.v3.raw",
           },
         });
-        this.currentMD = res.data
-        
+        this.currentMD = res.data;
+
         console.log(res.data);
       } catch (error) {
-        console.error(error);
+        this.DisplayMessage = "No README in repository";
+        
       }
     },
   },
@@ -95,10 +124,4 @@ export default {
 </script>
 
 <style scoped>
-
-  .markdownBody h1, h2, h3, h4, h5, h6 {
-    font-size: initial;
-    font-weight: initial;
-}
-
 </style>

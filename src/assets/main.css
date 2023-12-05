@@ -2,19 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-    h1 {
-      @apply text-2xl font-bold;
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+  }
+  p {
+        margin-bottom: 1em;
+        line-height: 1.5;
     }
-    h2 {
-      @apply text-xl font-bold;
-    }
-    h3 {
-      @apply text-lg font-bold
-    }
-   
-    
+  a {
+      color: #0366d6; /* Link color in Markdown style */
   }
 
-    
+  ul {
+
+      margin-bottom: 1em;
+  }
+
+  li {
+      margin-bottom: 0.5em;
+
+  }
+}

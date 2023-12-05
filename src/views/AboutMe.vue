@@ -214,4 +214,6 @@ export default {
 .social-icons a {
   margin: 0 5px; /* Adjust the spacing between icons */
 }
+
+
 </style>
