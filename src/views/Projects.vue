@@ -5,7 +5,7 @@
       class="flex | h-[85vh] | p-4 | bg-white | border | border-gray-200 | rounded-lg | shadow | dark:bg-gray-800 | dark:border-gray-700 | overflow-auto"
     >
       <!-- LEFT SIDE - Repository List -->
-      <div class="w-[25%] | overflow-auto">
+      <div class="w-[25%] | overflow-auto scrollbar-thin overflow-y-scroll scrollbar-rounded pr-2">
         <div v-for="data in githubAccount" :key="data.id">
           <div
             @click="getMarkdown(data.owner.login, data.name, data.clone_url)"
@@ -33,10 +33,10 @@
 
       <!-- RIGHT SIDE - MD READER -->
       <div
-        class="flex-1 p-12 bg-white border border-gray-200 rounded-lg shadow dark:bg-white dark:border-gray-700 overflow-auto ml-2 relative"
+        class="flex-1 p-12 bg-gray-900 border border-gray-200 rounded-lg shadow dark:border-gray-700 overflow-auto ml-2 relative"
       >
         <div v-if="DisplayMessage !== 'No repository selected'"
-          class="absolute top-0 right-0 bg-green-400 w-14 h-14 rounded-full flex items-center justify-center mr-8 mt-8 hover:bg-green-600 cursor-pointer"
+          class="absolute top-0 right-0 bg-[#bc13fe] w-14 h-14 rounded-full flex items-center justify-center mr-8 mt-8 hover:bg-[#bb13fe77] cursor-pointer"
         >
          <a :href="repo" target="_blank"> <i class="fa-solid fa-arrow-right text-4xl text-white"></i></a>
         </div>

@@ -8,34 +8,40 @@
     font-weight: bold;
     margin-bottom: 0.5em;
     line-height: 1.2;
+    @apply text-white
   }
   h2 {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 0.5em;
     line-height: 1.2;
+    @apply text-white
   }
   h3 {
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 0.5em;
     line-height: 1.2;
+    @apply text-white
   }
   p {
         margin-bottom: 1em;
         line-height: 1.5;
+        @apply text-white
     }
   a {
-      color: #0366d6; /* Link color in Markdown style */
+    @apply text-blue-400 hover:text-blue-500
   }
 
   ul {
 
       margin-bottom: 1em;
+      @apply text-white
   }
 
   li {
       margin-bottom: 0.5em;
+      @apply text-white
 
   }
 }

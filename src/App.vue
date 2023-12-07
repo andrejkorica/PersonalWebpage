@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="flex | flex-col | h-screen">
+  <div id="app" class="flex | flex-col | h-screen scrollbar-thumb-[#bc13fe] scrollbar-track-[#bb13fe77]">
     
     <navbar />
       <RouterView/>
