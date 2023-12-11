@@ -2,16 +2,17 @@
   <div class="w-[80%] | mx-auto">
     <!-- MAIN PARENT -->
     <div
-      class="flex | h-[85vh] | p-4 | bg-white | border | border-gray-200 | rounded-lg | shadow | dark:bg-gray-800 | dark:border-gray-700 | overflow-auto"
+      class="flex | h-[80vh] | p-4 | bg-white | border | border-gray-200 | rounded-lg | shadow | dark:bg-gray-800 | dark:border-gray-700 "
     >
       <!-- LEFT SIDE - Repository List -->
-      <div class="w-[25%] | overflow-auto scrollbar-thin overflow-y-scroll scrollbar-rounded pr-2">
+      <div
+        class="w-[25%] | overflow-auto | overflow-y-scroll | scrollbar-rounded | scrollbar-thin | scrollbar-track-rounded-full | scrollbar-thumb-rounded-full | pr-2"
+      >
         <div v-for="data in githubAccount" :key="data.id">
           <div
             @click="getMarkdown(data.owner.login, data.name, data.clone_url)"
             :title="data.name"
             class="overflow-ellipsis | hover:bg-[#bb13fe77] | cursor-pointer | p-3 | bg-white | border | border-gray-200 | rounded-lg | shadow dark:bg-gray-900 | dark:border-gray-700"
-
           >
             <h1
               class="mb-1 | text-xl | font-medium | text-gray-900 | dark:text-white | overflow-ellipsis | line-clamp-2"
@@ -32,38 +33,14 @@
       </div>
 
       <!-- RIGHT SIDE - MD READER -->
-      <div
-        class="flex-1 p-12 bg-gray-900 border border-gray-200 rounded-lg shadow dark:border-gray-700 overflow-auto ml-2 relative"
-      >
-        <div v-if="DisplayMessage !== 'No repository selected'"
-          class="absolute top-0 right-0 bg-[#bc13fe] w-14 h-14 rounded-full flex items-center justify-center mr-8 mt-8 hover:bg-[#bb13fe77] cursor-pointer"
-        >
-         <a :href="repo" target="_blank"> <i class="fa-solid fa-arrow-right text-4xl text-white"></i></a>
-        </div>
-
-        <div v-if="currentMD">
-          <Markdown
-            :linkify="true"
-            :source="currentMD"
-            :anchor="{ level: 3 }"
-          />
-        </div>
-
-        <div v-else class="flex items-center justify-center h-[100%]">
-          <h1
-            class="mb-4 font-bold font-mono text-gray-300 text-6xl text-center"
-          >
-            {{ DisplayMessage }}
-          </h1>
-        </div>
-      </div>
+      <ReadMePannel :githubAccount ="githubAccount" :currentMD = "currentMD" :DisplayMessage ="DisplayMessage" :repo="repo"/>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import Markdown from "vue3-markdown-it";
+import ReadMePannel from "@/components/ReadMePannel.vue";
 export default {
   data() {
     return {
@@ -74,7 +51,7 @@ export default {
     };
   },
   components: {
-    Markdown,
+    ReadMePannel,
   },
   methods: {
     async githubFetch() {
@@ -89,7 +66,7 @@ export default {
     },
 
     async getMarkdown(owner, name, clone_url) {
-      this.DisplayMessage = ""
+      this.DisplayMessage = "";
       this.currentMD = null;
       this.repo = clone_url;
 
@@ -111,7 +88,6 @@ export default {
         console.log(res.data);
       } catch (error) {
         this.DisplayMessage = "No README in repository";
-        
       }
     },
   },
