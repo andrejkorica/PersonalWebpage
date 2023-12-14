@@ -34,7 +34,7 @@
 import Markdown from "vue3-markdown-it";
 export default {
     props:{
-        githubAccount: Object,
+        githubAccount: null,
         currentMD: String,
         DisplayMessage: String,
         repo: String

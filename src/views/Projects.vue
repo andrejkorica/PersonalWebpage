@@ -5,35 +5,10 @@
       class="flex | h-[80vh] | p-4 | bg-white | border | border-gray-200 | rounded-lg | shadow | dark:bg-gray-800 | dark:border-gray-700 "
     >
       <!-- LEFT SIDE - Repository List -->
-      <div
-        class="w-[25%] | overflow-auto | overflow-y-scroll | scrollbar-rounded | scrollbar-thin | scrollbar-track-rounded-full | scrollbar-thumb-rounded-full | pr-2"
-      >
-        <div v-for="data in githubAccount" :key="data.id">
-          <div
-            @click="getMarkdown(data.owner.login, data.name, data.clone_url)"
-            :title="data.name"
-            class="overflow-ellipsis | hover:bg-[#bb13fe77] | cursor-pointer | p-3 | bg-white | border | border-gray-200 | rounded-lg | shadow dark:bg-gray-900 | dark:border-gray-700"
-          >
-            <h1
-              class="mb-1 | text-xl | font-medium | text-gray-900 | dark:text-white | overflow-ellipsis | line-clamp-2"
-            >
-              {{ data.name }}
-            </h1>
-            <p
-              v-if="data.description"
-              class="text-sm | text-gray-500 | dark:text-gray-400"
-            >
-              {{ data.description }}
-            </p>
-            <p v-else class="text-sm | text-gray-500 | dark:text-gray-400">
-              No description defined
-            </p>
-          </div>
-        </div>
-      </div>
+      <RepositoryList :githubAccount ="githubAccount" :getMarkdown="getMarkdown"/>
 
       <!-- RIGHT SIDE - MD READER -->
-      <ReadMePannel :githubAccount ="githubAccount" :currentMD = "currentMD" :DisplayMessage ="DisplayMessage" :repo="repo"/>
+      <ReadMePannel v-if="$windowWidth > 768" :githubAccount ="githubAccount" :currentMD = "currentMD" :DisplayMessage ="DisplayMessage" :repo="repo"/>
     </div>
   </div>
 </template>
@@ -41,6 +16,7 @@
 <script>
 import axios from "axios";
 import ReadMePannel from "@/components/ReadMePannel.vue";
+import RepositoryList from "@/components/RepositoryList.vue";
 export default {
   data() {
     return {
@@ -48,11 +24,13 @@ export default {
       currentMD: null,
       DisplayMessage: "No repository selected",
       repo: "",
+
     };
   },
   components: {
     ReadMePannel,
-  },
+    RepositoryList
+},
   methods: {
     async githubFetch() {
       try {
@@ -88,6 +66,10 @@ export default {
         console.log(res.data);
       } catch (error) {
         this.DisplayMessage = "No README in repository";
+      }
+
+      if($windowWidth > 768){
+        
       }
     },
   },
