@@ -43,7 +43,7 @@ export default {
       }
     },
 
-    async getMarkdown(owner, name, clone_url) {
+    async getMarkdown(owner, name, clone_url, pageWidth) {
       this.DisplayMessage = "";
       this.currentMD = null;
       this.repo = clone_url;
@@ -67,9 +67,8 @@ export default {
       } catch (error) {
         this.DisplayMessage = "No README in repository";
       }
-
-      if($windowWidth > 768){
-        
+      if(pageWidth < 768){
+        window.open(`https://github.com/andrejkorica/${repo}`)
       }
     },
   },

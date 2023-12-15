@@ -4,7 +4,7 @@
   >
     <div v-for="data in githubAccount" :key="data.id">
       <div
-        @click="getMarkdown(data.owner.login, data.name, data.clone_url)"
+        @click="getMarkdown(data.owner.login, data.name, data.clone_url, $windowWidth)"
         :title="data.name"
         class="overflow-ellipsis | hover:bg-[#bb13fe77] | cursor-pointer | p-3 | bg-white | border | border-gray-200 | rounded-lg | shadow dark:bg-gray-900 | dark:border-gray-700"
       >
